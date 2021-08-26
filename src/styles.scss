@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+$ystm-fs: ( // collection variables
+  a: 1em, // переменая со значением `1em` 
+  v: 2em,
+  g: 3em,
+  d: v+v);
+
+$fs-a: 3em;
+
+// =-=-=-=-=-=-=-=-
+// color pallete
+// =-=-=-=-=-=-=-=-
+$red: #e34234;
+.red{
+	color: $red;
+}
+
+
+
+.csl {
+  font-size: $fs-a;
+  color: $red;
+}
