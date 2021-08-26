@@ -1,3 +1,5 @@
+@import '~bootstrap/scss/bootstrap';
+
 /* You can add global styles to this file, and also import other style files */
 $ystm-fs: ( // collection variables
   a: 1em, // переменая со значением `1em` 
@@ -21,3 +23,5 @@ $red: #e34234;
   font-size: $fs-a;
   color: $red;
 }
+
+/* Importing Bootstrap SCSS file. */
