@@ -1,6 +1,6 @@
 # Перед первым  своим компонентом
 
-Установка инструментов разработки в день 175 года 2021.
+Установка инструментов разработки в день 175, года 2021.
 
 Создание проекта ангуляр:
 
@@ -30,4 +30,18 @@ const routes: Routes = [
   { path: '', redirectTo: 'ystm', pathMatch: 'full' },
 ]
 ```
+
+## Шаблон HTML
+
+Для шаблона выбираем `Bootstrap` подключаемый через модуль `NPM`.
+Модуль `ng-bootstrap` подгружается командой:
+
+```sh
+ng add @ng-bootstrap/ng-bootstrap
+```
+
+Остальные подробности `ng-bootstrap` [здесь…](https://github.com/ng-bootstrap/ng-bootstrap)
+
+Сам фреймворк `Bootstrap` [здесь…](https://getbootstrap.com/)
+
 
