@@ -1,5 +1,22 @@
 @import '~bootstrap/scss/bootstrap';
 
+@font-face {
+  font-family: 'Irmologion';
+  font-display: auto;
+  src: local('Clunya-IrmIEUcs'), url('https://a374ru.github.io/aprakos.ru/font/Clunya-IrmIEUcs.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.namePage {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fafafa;
+  font-family: Irmologion;
+  padding: 32px 0px 0px 12px;
+
+}
+
 /* You can add global styles to this file, and also import other style files */
 $ystm-fs: ( // collection variables
   a: 1em, // переменая со значением `1em` 
