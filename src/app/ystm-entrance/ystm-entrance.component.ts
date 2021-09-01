@@ -56,55 +56,55 @@ export class YstmEntranceComponent implements OnInit {
 
   ystmRRR = [
     {
-      id: 1, 
+      id: 1,
       name: "One",
       num: this.numberok,
-      source:"https://2.bp.blogspot.com/-mXGXVDW8FKA/YSJis0-2AzI/AAAAAAAAG5Y/wue1zyd-yJQDFshtPclrNOgClBzC8SMdgCK4BGAYYCw/s120/Az-742896.png",
+      url: "https://2.bp.blogspot.com/-mXGXVDW8FKA/YSJis0-2AzI/AAAAAAAAG5Y/wue1zyd-yJQDFshtPclrNOgClBzC8SMdgCK4BGAYYCw/s120/Az-742896.png",
       cols: 1,
       rows: 1
 
     },
     {
-      id: 2, 
+      id: 2,
       name: "Two",
       num: this.numberok,
-      source:"https://1.bp.blogspot.com/-IUroxegf_Pw/YMTFf_s2YhI/AAAAAAAAGmw/I4uxsGoYYu0byG2pHf-iPRnUNM0A25q-gCLcBGAsYHQ/s120/az374ru_2.png",
+      url: "https://1.bp.blogspot.com/-IUroxegf_Pw/YMTFf_s2YhI/AAAAAAAAGmw/I4uxsGoYYu0byG2pHf-iPRnUNM0A25q-gCLcBGAsYHQ/s120/az374ru_2.png",
       cols: 1,
       rows: 1
 
     },
     {
-      id: 3, 
+      id: 3,
       name: "Three",
       num: this.numberok,
-      source:"https://1.bp.blogspot.com/-TM5ZnEKL_24/YMTFhgBOAgI/AAAAAAAAGm4/srWiFeEz3iEMQ_gWUZI-Q6ZxbweG_MhUwCLcBGAsYHQ/s120/az374ru_3.png",
+      url: "https://1.bp.blogspot.com/-TM5ZnEKL_24/YMTFhgBOAgI/AAAAAAAAGm4/srWiFeEz3iEMQ_gWUZI-Q6ZxbweG_MhUwCLcBGAsYHQ/s120/az374ru_3.png",
       cols: 1,
       rows: 1
 
     },
     {
-      id: 4, 
+      id: 4,
       name: "Four",
       num: this.numberok,
-      source:"https://1.bp.blogspot.com/-DYwUvC9BnbQ/YMTFhBoWktI/AAAAAAAAGm0/x9Q7yC-AuUI-SirphMl39C9tlmd4HlLpQCLcBGAsYHQ/s120/az374ru_4.png",
+      url: "https://1.bp.blogspot.com/-DYwUvC9BnbQ/YMTFhBoWktI/AAAAAAAAGm0/x9Q7yC-AuUI-SirphMl39C9tlmd4HlLpQCLcBGAsYHQ/s120/az374ru_4.png",
       cols: 1,
       rows: 1
 
     },
     {
-      id: 5, 
+      id: 5,
       name: "Five",
       num: this.numberok,
-      source:"https://1.bp.blogspot.com/-i7zTJmowvtQ/YMTFiOzHBoI/AAAAAAAAGm8/mSCxMDhmGnEd8DWRgKy0zI6NPJFffX6SgCLcBGAsYHQ/s120/az374ru_5.png",
+      url: "https://1.bp.blogspot.com/-i7zTJmowvtQ/YMTFiOzHBoI/AAAAAAAAGm8/mSCxMDhmGnEd8DWRgKy0zI6NPJFffX6SgCLcBGAsYHQ/s120/az374ru_5.png",
       cols: 1,
       rows: 1
 
     },
     {
-      id: 6, 
+      id: 6,
       name: "Sex",
       num: this.numberok,
-      source:"https://1.bp.blogspot.com/-wFntKmpJLoc/YMTFi90cIoI/AAAAAAAAGnA/PQwz90fM8bAdQ4bP3k9dRGV3Gej48NtfgCLcBGAsYHQ/s120/az374ru_6.png",
+      url: "https://1.bp.blogspot.com/-wFntKmpJLoc/YMTFi90cIoI/AAAAAAAAGnA/PQwz90fM8bAdQ4bP3k9dRGV3Gej48NtfgCLcBGAsYHQ/s120/az374ru_6.png",
       cols: 2,
       rows: 1
     }
