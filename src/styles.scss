@@ -8,14 +8,20 @@
   font-style: normal;
 }
 
+// .img{
+//   margin-top: 9%;
+// }
+
 .namePage {
-  font-size: 2rem;
+  font-size: 3em;
   font-weight: 600;
-  color: #fafafa;
+  color: #ffc7c7;
   font-family: Irmologion;
   padding: 32px 0px 0px 12px;
 
 }
+
+
 
 /* You can add global styles to this file, and also import other style files */
 $ystm-fs: ( // collection variables
@@ -46,13 +52,15 @@ $red: #e34234;
 }
 
 .h300 {
-  height: 7rem;
+  height: 6rem;
   background-color: #e34234;
+  width: 100%;
+  margin-bottom: 1.5rem;
+
 }
 
 .csl {
-  font-size: $fs-a;
-  color: $red;
+  font-family: Irmologion;
 }
 
 /* Importing Bootstrap SCSS file. */
