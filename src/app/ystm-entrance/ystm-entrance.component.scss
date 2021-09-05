@@ -1,12 +1,5 @@
 
-@font-face {
-  font-family: "Irmologion";
-  font-display: auto;
-  src: local("Clunya-IrmIEUcs"),
-    url("https://a374ru.github.io/aprakos.ru/font/Clunya-IrmIEUcs.otf");
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 .cntr {
   text-align: center;
@@ -15,7 +8,7 @@
 .csl {
   /* переопределение глобального класса `rrr` */
   font-size: 42px;
-  color: black;
+  // color: #8F7161;
   font-family: Irmologion;
 
 }

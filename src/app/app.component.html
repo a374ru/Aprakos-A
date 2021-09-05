@@ -3,21 +3,41 @@
   <div class="row">
     <div class="col-1 h300 ">
       <div class="img-fluid">
-
       </div>
     </div>
 
     <div class="col namePage csl h300">
       <p>СІЙ ДЕ~НЬ</p>
     </div>
-    <div class="col-1 h300 ">
+
+    <div class="col-2 h300">
       <!-- <div class="img-fluid">
         <img class="rounded"
           src="https://1.bp.blogspot.com/-NsnWECMcQVU/YMTFe_pbOKI/AAAAAAAAGms/Kb4KOserqsQTR9IaHshNfrIU27zHbHWrQCLcBGAsYHQ/s111/az374ru_1.png"
           alt="Aprakos">
     </div> -->
+    </div>
   </div>
-</div>
-<!-- </div> -->
+  <div class="container">
 
-<app-ystm-entrance></app-ystm-entrance>
+    <div class="row pppp">
+
+      <div class="col fontics">
+        <div class="nav">
+          <li class="nav-item"><a routerLink="/apr" class="active"> Компонент 1 </a></li>
+          <li class="nav-item"><a routerLink="/ystm" class="active"> Компонент </a></li>
+          <li class="nav-item"><a routerLink="/easter" class="active"> Пасхалия </a></li>
+          <li class="nav-item"><a href="" class="active"></a>Третья ссылка</li>
+          <li class="nav-item"><a href="" class="active"></a>Четвертая ссылка </li>
+        </div>
+      </div>
+      <!-- <a (click)="changeBGColor()" id="swapColor" class="swapColor"></a> -->
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button (click)="changeBGColor()" id="swapColor" class="btn btn-danger me-md-2 btn-sm"
+          type="button">тема</button>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+  <!-- <app-ystm-entrance></app-ystm-entrance> -->
+  <router-outlet></router-outlet>

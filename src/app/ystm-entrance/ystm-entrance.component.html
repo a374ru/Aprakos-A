@@ -2,12 +2,15 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-lg-4" *ngFor="let item of ystmRRR; index as i;">
-      <span style="float: right;margin-top: 1em;">{{item.id}}</span>
       <div class="col-fluid">
-        <a href="###">
+        <a routerLink="/apr">
           <img class="float-right" src="{{item.url}}" alt="Aprakos">
-        </a>{{i+1}}
+          <span style="float: left; margin: 2em, 1em;">{{i+1}}. </span>
+        </a>
         <p class="csl"><span class="red">{{bukvica}}</span>{{entrance}} <span class="red">{{item.num}}</span></p>
       </div>
     </div>
+    
   </div>
+  
+  <!-- <router-outlet></router-outlet> -->
