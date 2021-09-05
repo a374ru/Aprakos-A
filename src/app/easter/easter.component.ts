@@ -11,7 +11,7 @@ export class EasterComponent implements OnInit {
 
   @Input() rrrColor?: string;
 
-  year = this.timeBoxService.formatsEaster.year
+  systemYear = this.timeBoxService.formatsEaster.momentYear
   easterDates = [{"year":"Год","month":"месяц","day":"день"}];
 
   // xxx = [1, 2, 3, 4]

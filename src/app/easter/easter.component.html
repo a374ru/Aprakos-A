@@ -2,9 +2,16 @@
   <div class="row">
     <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let item of easterDates; index as i;">
       <div class="easterList fontics">
-        <div>
+        <div *ngIf="item.year != systemYear; else elseBlock">
           <span style="color:#2C87BF">{{ item.year }} </span><span id="rrr123" class="rrr123">&nbsp; <span
-              style="color: #8F7161;">{{item.month}},</span> {{item.day }} &nbsp;</span> </div>
+              style="color: #8f6161;">{{item.month}},</span> {{item.day }} &nbsp;</span>
+        </div>
+        <ng-template #elseBlock>
+          <span  style="color:#e34234">{{ item.year }} </span><span id="rrr124" class="rrr124">&nbsp; <span
+            style="color: #8F7161;">{{item.month}},</span> {{item.day }} &nbsp;</span>
+
+        </ng-template>
+       
       </div>
     </div>
     <!-- <div class="col">
