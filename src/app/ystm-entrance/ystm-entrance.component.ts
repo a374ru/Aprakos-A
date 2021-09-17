@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { TimeboxService } from '../timebox.service';
+import { TimeboxService } from '../services/timebox.service';
 
 
 

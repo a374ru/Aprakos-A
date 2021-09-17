@@ -1,6 +1,6 @@
 <!-- <div class="navbar h300"> -->
 <div class="container-fluid">
-  <div class="row">
+  <div class="row grd">
     <div class="col-1 h300 ">
       <div class="img-fluid">
       </div>
@@ -10,34 +10,25 @@
       <p>СІЙ ДЕ~НЬ</p>
     </div>
 
-    <div class="col-2 h300">
-      <!-- <div class="img-fluid">
-        <img class="rounded"
-          src="https://1.bp.blogspot.com/-NsnWECMcQVU/YMTFe_pbOKI/AAAAAAAAGms/Kb4KOserqsQTR9IaHshNfrIU27zHbHWrQCLcBGAsYHQ/s111/az374ru_1.png"
-          alt="Aprakos">
-    </div> -->
+    <div class="col-3 h300 namePage currentYearCSL">
+      <a id="swapColor" (click)="changeBGColor()">{{currentYearCSL}}</a>
     </div>
   </div>
-  <div class="container">
 
-    <div class="row pppp">
-
+  <div class="container pppp fontics h1">
+    <div class="row">
       <div class="col">
         <nav class="nav">
-          <li class="nav-item"><a routerLink="/ystm" class="active"> YSTM </a></li>
-          <li class="nav-item"><a routerLink="/apr" class="active"> APR </a></li>
-          <li class="nav-item"><a routerLink="/easter" class="active"> EASTER </a></li>
-          <li class="nav-item"><a routerLink="/rrr" class="active">NoNAME</a></li>
-          <li class="nav-item"><a routerLink="/rrr" class="active">NoNAME </a></li>
+          <li class="nav-item"><a routerLink="/ystm" class="active"> Ябо-система </a></li>
+          <li class="nav-item"><a routerLink="/apr" class="active"> Aprakos </a></li>
+          <li class="nav-item"><a routerLink="/easter" class="active"> Пасха </a></li>
+          <li class="nav-item"><a routerLink="/rrr" class="active"> нет имени </a></li>
+          <li class="nav-item"><a routerLink="/rrr" class="active"> нет имени </a></li>
         </nav>
-      </div>
-      <!-- <a (click)="changeBGColor()" id="swapColor" class="swapColor"></a> -->
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button (click)="changeBGColor()" id="swapColor" class="btn btn-danger me-md-2 btn-sm"
-          type="button">тема</button>
       </div>
     </div>
   </div>
-  <!-- </div> -->
-  <!-- <app-ystm-entrance></app-ystm-entrance> -->
-  <router-outlet></router-outlet>
+</div>
+<!-- </div> -->
+<!-- <app-ystm-entrance></app-ystm-entrance> -->
+<router-outlet></router-outlet>

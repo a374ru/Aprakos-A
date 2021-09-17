@@ -44,7 +44,7 @@ body{
 
 .pppp{
 padding-left: 2%;
-padding-top: 2%;
+padding-top: 2.7%;
 padding-right: 1%;
 padding-bottom: 3%;
 }
@@ -99,4 +99,16 @@ $red: #e34234;
 .fontics{
   font-family: Fontics;
   font-size: 130%;
+}
+
+$ystm-fs-22: 2.2em;
+$ystm-fs-11: 1.1em;
+$ystm-fs-33: 3.3em;
+$ystm-fs-44: 4.4em;
+$ystm-fs-07: 0.7em;
+
+.h1 {
+
+  font-size: $ystm-fs-22;
+
 }

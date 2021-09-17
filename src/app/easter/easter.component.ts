@@ -1,5 +1,5 @@
 import { Component, Injectable, OnInit, Input } from '@angular/core';
-import { TimeboxService } from '../timebox.service';
+import { TimeboxService } from '../services/timebox.service';
 
 
 @Component({
