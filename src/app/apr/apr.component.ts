@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TimeboxService } from '../services/timebox.service'
+import { TimeboxService } from '../services/timebox.service';
+import { aprakos } from 'src/app/apr/aprakos';
 
 @Component({
   selector: 'app-apr',
@@ -7,16 +8,29 @@ import { TimeboxService } from '../services/timebox.service'
   styleUrls: ['./apr.component.scss']
 })
 export class AprComponent implements OnInit {
+  
+  // S:S 111 Вывести в html зачала из aprakos.json 205-2021  
+  aprakos = aprakos
 
-// S:S 111 Вывести в html зачала из aprakos.json 205-2021  
+  // let zapstl = ""
+  apstl = this.aprakos[0].apstl
+  // let zevngl = ""
+  evngl = this.aprakos[0].evngl
 
-  constructor(private timeBox: TimeboxService) { }
-// import { TimeboxService } from '../timebox.service'
 
-  ngOnInit(): void {
+  // for (const i of  array) {
+    
+  // }
+
+  constructor(private timeBox: TimeboxService) { 
+
+    console.log(this.aprakos[0].apstl);
+
+
   }
 
-  
+  ngOnInit(): void {    }
+
 
 
 

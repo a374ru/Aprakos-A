@@ -1,4 +1,4 @@
-[
+export let aprakos = [
 	{
 		"aprakos": "11",
 		"sedmica": "ПА~СХА ХРИСТО~ВА",
