@@ -1,16 +1,15 @@
-<!-- <div class="navbar h300"> -->
 <div class="container-fluid">
   <div class="row grd">
-    <div class="col-1 h300 ">
+    <div class="col-1 h300">
       <div class="img-fluid">
       </div>
     </div>
 
-    <div class="col namePage csl h300">
+    <div class="col namePage csl h300 h1">
       <p>СІЙ ДЕ~НЬ</p>
     </div>
 
-    <div class="col-3 h300 namePage currentYearCSL">
+    <div class="col-3 h300 namePage currentYearCSL h2">
       <a id="swapColor" (click)="changeBGColor()">{{currentYearCSL}}</a>
     </div>
   </div>
@@ -29,13 +28,16 @@
     </div>
   </div>
 </div>
-<!-- </div> -->
-<!-- <app-ystm-entrance></app-ystm-entrance> -->
-<router-outlet></router-outlet>
-<div class="row">
 
-  <div class="col-fluid ftr">
-    Yabo System © Third Millennium
-  </div>
 
-</div>
+
+<router-outlet>
+  <!-- Здесь вывод компонента по пути -->
+</router-outlet>
+
+
+
+    <div class="col-fluid ftr">
+      Yabo System © Third Millennium
+    </div>
+ 

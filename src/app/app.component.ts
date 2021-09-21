@@ -1,17 +1,19 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { convertToObject } from 'typescript';
 import { DateYearService } from './services/date-year.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  template: '<app-apr [revertColorText]="revertColor"></app-apr> ',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
 
-  constructor(public dateyearService:DateYearService){
 
-    localStorage.setItem('ystm','Yabo-system © Third Millennium')
+  constructor(public dateyearService: DateYearService) {
+
+    localStorage.setItem('ystm', 'Yabo-system © Third Millennium')
 
 
   }
@@ -41,15 +43,14 @@ export class AppComponent implements OnInit {
     let black: string = "#251D25"
 
     if (this.bgcolor == black) {
-
       this.bgcolor = white
       document.body.style.backgroundColor = this.bgcolor;
       // ;[white, black]=[black, white]
-   document.getElementById('swapColor')!.innerHTML = "де1нь"
+      document.getElementById('swapColor')!.innerHTML = "де1нь"
       document.cookie = "themes=white"
 
     } else {
-
+      
       document.body.style.backgroundColor = black;
       document.getElementById('swapColor')!.innerHTML = "но1чь"
       document.cookie = "themes=black"

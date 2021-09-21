@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TimeboxService } from '../services/timebox.service';
 import { aprakos } from 'src/app/apr/aprakos';
-import { regExpEscape } from '@ng-bootstrap/ng-bootstrap/util/util';
 
 @Component({
   selector: 'app-apr',
@@ -9,23 +8,23 @@ import { regExpEscape } from '@ng-bootstrap/ng-bootstrap/util/util';
   styleUrls: ['./apr.component.scss']
 })
 export class AprComponent implements OnInit {
-  
-  // S:S 111 Вывести в html зачала из aprakos.json 205-2021  
-  aprakos = aprakos
 
-  // let zapstl = ""
-  apstl = this.aprakos[0].apstl
-  // let zevngl = ""
-  evngl = this.aprakos[0].evngl
-  
+// Получение зачал
+  aprakos = aprakos
+  apstl = ""
+  evngl = ""
+
   buckvicaApstl = "???"
   buckvicaEvngl = "???"
+  colorRevert?: string;
+  zapstl?: string;
+  zevngl?: string;
 
   // for (const i of  array) {
-    
+
   // }
 
-  constructor(private timeBox: TimeboxService) { 
+  constructor(private timeBox: TimeboxService) {
 
     // console.log(this.aprakos[0].apstl);
 
@@ -34,25 +33,49 @@ export class AprComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {  
+  ngOnInit(): void {
 
-    let regx =   /\(За\?\s\S*\)\s(\S|Ё|)?#?:?\$?/
+   
 
-    let rng = aprakos[0].apstl.match(regx)
-    this.apstl = aprakos[0].apstl.slice(rng![0].length)
-    this.buckvicaApstl = rng![0]
+    this.currentZachalo()
+
+  }
+
+/**
+ * Функция вычисляет текущее зачало, выполняет поиск номера стихов и первой буквы зачала для выдеоления. 
+ */
+currentZachalo(){
+  
+  for (const key in aprakos) {
+  const curApr = "" + (this.timeBox.formatsEaster.currentWeek) + ( this.timeBox.formatsEaster.dayNum)
+  if ( aprakos[key].aprakos == curApr) {
+    this.zapstl = aprakos[key].zapstl
+    this.apstl = aprakos[key].apstl;
+    this.zevngl = aprakos[key].zevngl
+    this.evngl = aprakos[key].evngl;
+
+  // Регулярное выражение для поиска нумерации стихов и БУКВИЦЫ
+   let regx = /\(За\?\s\S*\)\s(\S|Ё|)?#?:?\$?/
+
+   let rng = aprakos[key].apstl.match(regx)
+   this.apstl = aprakos[key].apstl.slice(rng![0].length)
+   this.buckvicaApstl = rng![0]
+
+   let rng2 = aprakos[key].evngl.match(regx)
+   this.evngl = aprakos[key].evngl.slice(rng2![0].length)
+   this.buckvicaEvngl = rng2![0]
+
+  //  console.log(rng![0], "====", curApr, this.timeBox.formatsEaster.currentWeek);
     
-    let rng2 = aprakos[0].evngl.match(regx)
-    this.evngl = aprakos[0].evngl.slice(rng2![0].length)
-    this.buckvicaEvngl = rng2![0]
+  }
+}
+
+
   
 
-console.log(rng![0]);
-
-    
 
 
-    }
+}
 
 
 

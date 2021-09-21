@@ -183,7 +183,12 @@ export class TimeboxService implements OnInit {
     /**
      *  Глас текущей седмицы
      */
-    glas: undefined
+    glas: undefined,
+
+    /**
+     * Число Апракоса по Пасхе
+     */
+    capr: 11,
 
   }
 
@@ -500,6 +505,8 @@ export class TimeboxService implements OnInit {
     let sss = this.formatsEaster.currentWeek = parseInt(
       (this.formatsEaster.momentMLS as number - (this.formatsEaster.lastEasterMLS as number))
       / this.CONST_MLS_DAY / 7 + "", 10) + 1
+      
+    this.formatsEaster.capr = "" + sss + this.formatsEaster.dayNum
 
     // Седмица начала Великого поста (Святой
     // четыредесятницы)

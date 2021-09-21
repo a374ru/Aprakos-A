@@ -1,9 +1,15 @@
 <section class="container">
-  <div class="row csl h4">
-    <div class="col-md" id="apstl">
-     <span class="red">{{ buckvicaApstl }}</span>{{apstl}}
+  <div class="row  h4">
+    <div [style.color]="colorRevert" class="col-md csl" id="apstl">
+      <p id="zapstl" class="fontics">
+       <span class="black">Апостол: </span>{{zapstl}}
+      </p>
+      <span class="red">{{ buckvicaApstl }}</span>{{apstl}}
     </div>
-    <div class="col" id="evngl">
+    <div class="col csl" id="evngl">
+      <p id="zevngl" class="fontics">  
+        <span class="black">Евангелие: </span>{{zevngl}}
+      </p>
       <span class="red">{{ buckvicaEvngl }}</span>{{evngl}}
     </div>
   </div>
