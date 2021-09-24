@@ -11,6 +11,7 @@ import { DateYearService } from './services/date-year.service';
 export class AppComponent implements OnInit {
 
 
+
   constructor(public dateyearService: DateYearService) {
 
     localStorage.setItem('ystm', 'Yabo-system © Third Millennium')
@@ -19,7 +20,7 @@ export class AppComponent implements OnInit {
   }
 
   title = 'Angular-Áprakos';
-  bgcolor = "#e34234";
+  bgcolor = "#FFF5EE"; // seashell
   currentYearCSL = "Not YearCSL";
 
   ngOnInit() {
@@ -39,13 +40,12 @@ export class AppComponent implements OnInit {
 
   changeBGColor() {
 
-    let white: string = "#fafafa"
+    let white: string = "seashell"
     let black: string = "#251D25"
 
     if (this.bgcolor == black) {
       this.bgcolor = white
       document.body.style.backgroundColor = this.bgcolor;
-      // ;[white, black]=[black, white]
       document.getElementById('swapColor')!.innerHTML = "де1нь"
       document.cookie = "themes=white"
 

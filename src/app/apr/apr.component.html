@@ -1,14 +1,16 @@
 <section class="container">
+  <p class="h4" style="padding: 0px;  color: slategray;">Седмица {{ currentWeek }}, <span style="color: #858585;"><b >  {{ weekDay }}</b></span> </p>
+  <hr class="hr-1">
   <div class="row  h4">
     <div [style.color]="colorRevert" class="col-md csl" id="apstl">
       <p id="zapstl" class="fontics">
-       <span class="black">Апостол: </span>{{zapstl}}
+        <span class="black">Апо§столъ: </span><br>{{zapstl}}
       </p>
       <span class="red">{{ buckvicaApstl }}</span>{{apstl}}
     </div>
     <div class="col csl" id="evngl">
-      <p id="zevngl" class="fontics">  
-        <span class="black">Евангелие: </span>{{zevngl}}
+      <p id="zevngl" class="fontics">
+        <span class="black">Ева§нгелие: </span><br>{{zevngl}}
       </p>
       <span class="red">{{ buckvicaEvngl }}</span>{{evngl}}
     </div>
