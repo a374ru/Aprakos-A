@@ -6,12 +6,11 @@ import { EasterComponent } from './easter/easter.component';
 import { Page404Component } from './page404/page404.component';
 
 const routes: Routes = [
-  { path: 'ystm', component: YstmEntranceComponent },
+  { path: '', redirectTo: 'apr', pathMatch: 'full' },
   { path: 'apr', component: AprComponent },
   { path: 'easter', component: EasterComponent },
-  { path: '', redirectTo: 'apr', pathMatch: 'full' },
+  { path: 'ystm', component: YstmEntranceComponent },
   { path: '**', component: Page404Component }
-  // {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
 # Апракос на Церковнославянском по рядовым зачалам.
 
-<script>
+<!-- <script>
 	window.location.href= 'a/index.html'
-</script>
+</script> -->

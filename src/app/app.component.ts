@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRouteSnapshot } from '@angular/router';
 import { DateYearService } from './services/date-year.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class AppComponent implements OnInit {
 
 
   }
+
 
   title = 'Angular-Aprakos';
   bgcolor = "#FFF5EE"; // seashell
