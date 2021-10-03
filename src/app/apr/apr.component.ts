@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TimeboxService } from '../services/timebox.service';
 
 @Component({
@@ -6,19 +6,20 @@ import { TimeboxService } from '../services/timebox.service';
   templateUrl: './apr.component.html',
   styleUrls: ['./apr.component.scss']
 })
+
+
 export class AprComponent implements OnInit {
 
   /**
    * Апракос в формате JSON.
-   * Данный json не входит в состав программы и составляется и корретируется в другом месте. Данный JSON файл является оригинальным поддерживаемым документом.
+   * Данный json не входит в состав программы, составляется и корретируется в другом проекте. Данный JSON файл является оригинальным поддерживаемым документом.
    */
-  url = "https://raw.githubusercontent.com/a374ru/aprakos-json/master/aprakos.json"
-
+  url = "https://cdn.jsdelivr.net/gh/a374ru/aprakos-json@master/aprakos.json"
 
   /**
-   * 
+   * Название текущего дня
    */
-  weekDay: string = " " + this.timeBox.formatsEaster.dayName;
+  weekDay: string = this.timeBox.formatsEaster.dayName as string;
 
   /**
    * Седмица по Пасхе
@@ -36,22 +37,22 @@ export class AprComponent implements OnInit {
   /**
    * Апостолтекущего дня.
   */
-  apstl = ""
+  apstl?: string
 
   /**
    * Евангелие текущего дня.
   */
-  evngl = ""
+  evngl?: string
 
   /**
    * Зачало и Буквица для Апостола. 
    */
-  buckvicaApstl = "---"
+  buckvicaApstl?: string
 
   /**
    * Зачало и Буквица для Евангелия. 
    */
-  buckvicaEvngl = "---"
+  buckvicaEvngl?: string
 
   /**
    * Номер зачала и стиха текущего Апракоса для Апостола
@@ -63,17 +64,17 @@ export class AprComponent implements OnInit {
    */
   zevngl?: string;
 
-  /**
-   * 
-   */
-  colorRevert?: string; //
-
   constructor(private timeBox: TimeboxService) {
-    console.log(this.weekDay, "=======")
-    // console.log(this.aprakos[0].apstl);
+    try {
+      // Получение aprakos.json с сервера.
+      fetch(this.url).then(loadedJson => loadedJson.text()).then(loadedJsonText => this.currentZachalo(JSON.parse(loadedJsonText))).catch(() =>
+        alert("Неудачная загрузка. Обновите страницу…")
+      )
 
-
-
+    } finally {
+      this.apstl = "Загрузка..."
+      this.evngl = "Загрузка..."
+    }
 
   }
 
@@ -82,15 +83,10 @@ export class AprComponent implements OnInit {
    * Запускает загрузку `json` с другого сервера. 
    * Вызывает функцию `currentZachalo()`.
    */
-  ngOnInit(): void {
-    // Получение aprakos.json с сервера.
-    fetch(this.url).then(one => one.text()).then(two => this.currentZachalo(JSON.parse(two)))
-    // TODO: добавть обработчик ошибок для fetch()
-
-  }
+  ngOnInit(): void { }
 
   /**
-   * Функция вычисляет текущее зачало из файла aprakos.json и выполняет поиск по регулярному выражению номера стиха и первой буквы зачал Апостола и Евангелия для выдеоления киноварью в шаблоне HTML. 
+   * Функция вычисляет текущее зачало из файла aprakos.json и выполняет поиск по регулярному выражению номера стиха и первой буквы зачал Апостола и Евангелия для выделения киноварью в шаблоне HTML. 
    */
   currentZachalo(json: any) {
 
@@ -98,9 +94,9 @@ export class AprComponent implements OnInit {
       const curApr = "" + (this.timeBox.formatsEaster.currentWeek) + (this.timeBox.formatsEaster.dayNum)
       if (json[key].aprakos == curApr) {
         this.zapstl = json[key].zapstl
-        this.apstl = json[key].apstl;
+        this.apstl = json[key].apstl
         this.zevngl = json[key].zevngl
-        this.evngl = json[key].evngl;
+        this.evngl = json[key].evngl
 
         // Регулярное выражение для поиска нумерации стихов и БУКВИЦЫ
         let regx = /\(За\?\s\S*\)\s(\S|Ё|)?#?:?\$?/
@@ -120,4 +116,8 @@ export class AprComponent implements OnInit {
   }
 
 
+
+
+
 }
+

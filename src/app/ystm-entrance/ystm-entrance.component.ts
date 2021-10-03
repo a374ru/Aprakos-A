@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { TimeboxService } from '../services/timebox.service';
 
 
@@ -20,7 +19,7 @@ export class YstmEntranceComponent implements OnInit {
   breakpointsObserver: any;
 
 
-  constructor(private timeBox: TimeboxService) { }
+  constructor( private timeBox: TimeboxService ) { }
 
   ngOnInit(): void {
     this.kinovar(this.entrance)

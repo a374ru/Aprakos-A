@@ -1,4 +1,4 @@
-import { Component, Injectable, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TimeboxService } from '../services/timebox.service';
 
 
@@ -18,7 +18,7 @@ export class EasterComponent implements OnInit {
 
   constructor(public timeBoxService: TimeboxService) {
 
-timeBoxService.formatsEaster.year
+    // timeBoxService.formatsEaster.year
 
   }
 

@@ -6,11 +6,22 @@ describe('DateYearService', () => {
   let service: DateYearService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [
+        DateYearService
+      ]
+
+    });
     service = TestBed.inject(DateYearService);
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+
+  it('should be created', () => {
+    expect(service.ttst("Oleg")).toBe("Oleg, Hi");
+  });
+
 });

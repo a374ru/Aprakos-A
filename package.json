@@ -1,6 +1,6 @@
 {
-  "name": "ang-material",
-  "version": "0.0.0",
+  "name": "angular-aprakos",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

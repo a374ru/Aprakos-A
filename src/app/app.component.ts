@@ -1,5 +1,4 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { convertToObject } from 'typescript';
 import { DateYearService } from './services/date-year.service';
 
 @Component({
@@ -19,7 +18,7 @@ export class AppComponent implements OnInit {
 
   }
 
-  title = 'Angular-Áprakos';
+  title = 'Angular-Aprakos';
   bgcolor = "#FFF5EE"; // seashell
   currentYearCSL = "Not YearCSL";
 

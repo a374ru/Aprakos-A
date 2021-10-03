@@ -94,5 +94,11 @@ export class DateYearService {
   // }
 
 
+  ttst(param: string): string{
+   let a: string = param +", Hi"
+    return a
+
+ } 
+
 
 }

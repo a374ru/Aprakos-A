@@ -3,11 +3,12 @@ p {
   padding: 7px 2px 4% 12px;
 }
 
-.black{
-  color:#666
+.black {
+  color: #666
 }
+
 #zapstl,
-#zevngl{
+#zevngl {
   // text-align: right;
   color: #e34234;
   font-size: 100%;
@@ -16,6 +17,5 @@ p {
 #apstl,
 #evngl {
   padding: 7px 22px 4% 12px;
-  // S:S: Требуется коррекция шрифта для глифа `†`. Происходит разрыв слова при установленном значении `juctify`. 
-  text-align: justify
-}  
+  // text-align: justify
+}
