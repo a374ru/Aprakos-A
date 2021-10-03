@@ -6,10 +6,11 @@ import { EasterComponent } from './easter/easter.component';
 import { Page404Component } from './page404/page404.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'apr', pathMatch: 'full' },
+  {path: 'Aprakos-A', component: AprComponent},
   { path: 'apr', component: AprComponent },
   { path: 'easter', component: EasterComponent },
   { path: 'ystm', component: YstmEntranceComponent },
+  { path: '', redirectTo: 'apr', pathMatch: 'full' },
   { path: '**', component: Page404Component }
 ];
 
