@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'ystm', component: YstmEntranceComponent },
   { path: 'apr', component: AprComponent },
   { path: 'easter', component: EasterComponent },
-  { path: '', redirectTo: 'ystm', pathMatch: 'full' },
+  { path: '', redirectTo: 'apr', pathMatch: 'full' },
   { path: '**', component: Page404Component }
   // {path: '**', component: PageNotFoundComponent}
 ];
