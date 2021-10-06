@@ -636,8 +636,8 @@ export class TimeboxService implements OnInit {
       ccc = this.formatsEaster.currentWeekStupka as number
       // TODO: // Требуется откорректировать ссылку с учётом отступки.
       this.formatsLinks.linkToAprakosPage = ccc + '/' + this.formatsEaster.dayNum + '.html'
-      this.formatsLinks.linkToElementID2 = `<a href="#seed${ccc}"  title="Сегодня : ${this.formatsEaster.dayName}">${this.formatsEaster.promWeeks as number + ccc}</a>`
-      this.formatsLinks.linkToElementID4 = `<a href="#seed${ccc}"  title="Сегодня : ${this.formatsEaster.dayName}">${this.formatsEaster.promWeeks as number + ccc - 7}</a>`
+      this.formatsLinks.linkToElementID2 = `<a href="#seed${ccc}"  title="Сегодня : ${this.formatsEaster.dayName}">${ccc}</a>`
+      this.formatsLinks.linkToElementID4 = `<a href="#seed${ccc}"  title="Сегодня : ${this.formatsEaster.dayName}">${ccc - 7}</a>`
 
 
     } else if (this.formatsEaster.currentWeek as number > 21 && this.formatsEaster.currentWeek as number < 27) {
