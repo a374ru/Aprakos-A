@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
     this.currentYearCSL = this.dateyearService.currentYearCSl()
 
     // let cookieYstm = document.cookie.split(',')
-    var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)themes\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+  var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)themes\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 
     if (cookieValue == "black") {
       this.changeBGColor()

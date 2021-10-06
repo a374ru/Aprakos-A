@@ -73,7 +73,7 @@ export class AprComponent implements OnInit {
 
     } finally {
       this.apstl = "Загрузка..."
-      this.evngl = "Загрузка..."
+      // this.evngl = "Загрузка..."
     }
 
   }

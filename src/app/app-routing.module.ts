@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'easter', component: EasterComponent },
   { path: 'ystm', component: YstmEntranceComponent },
   { path: '', redirectTo: 'apr', pathMatch: 'full' },
-  { path: '*', component: Page404Component }
+  { path: '**', component: Page404Component }
 ];
 
 @NgModule({
