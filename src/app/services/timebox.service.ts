@@ -138,6 +138,11 @@ export class TimeboxService implements OnInit {
     currentWeek: undefined,
 
     /**
+     * Текущий месяц RU.
+     */
+    currentMonth: undefined,
+
+    /**
      * Номер текущей седмицы с учетом отступки.
      */
     currentWeekStupka: undefined,
@@ -167,7 +172,8 @@ export class TimeboxService implements OnInit {
     pyatiDesyatnicaMLS: undefined,
 
     /**
-     * Отступка на Воздвижение Креста.
+     * Отступка или преступка на Воздвижение Креста.
+     * Вычисляется по наступлению первого понедельника по Воздвижению.
      */
     vozStupka: undefined,
 
@@ -196,7 +202,7 @@ export class TimeboxService implements OnInit {
     linkToElementIDSeed: undefined,
     linkToElementID2: "нет",
     linkToElementID3: "нет",
-    linkToElementID4: "нет",
+    linkToElementID4: undefined,
     linkToElementID5: undefined,
     linkToElementID6: undefined,
 
@@ -294,7 +300,7 @@ export class TimeboxService implements OnInit {
   * `try`, потому что в данном методе присутствует код для изменения
   * элементов `DOM`.
   *
-  * Рекомендация: - лучше вынести меод `insertElements` из
+  * Рекомендация: - лучше вынести метод `insertElements` из
   * конструктора класса `TimeBoxOrthodox`, вызывая его после
   * определения экземпляра или в коде, или на странице `HTML`
   *
@@ -333,6 +339,7 @@ export class TimeboxService implements OnInit {
     this.calculateLinksAll()
     this.voznesnieGospodne()
     this.pyatDesyatnica()
+    this.currentMonthRU()
 
     try {
       this.insertElements()
@@ -366,7 +373,7 @@ export class TimeboxService implements OnInit {
       document.location.replace('#')
 
       // TODO: insert code 333
-      return `${userdate}/${this.theMoment.getMonth() + 1}/${this.theMoment.getDate()}`
+      return `${userdate}/${this.theMoment.getMonth()}/${this.theMoment.getDate()}`
 
 
 
@@ -530,19 +537,28 @@ export class TimeboxService implements OnInit {
     return `${today} – ${this.formatsEaster.ostatok} \n Богослужебных седмиц - ${this.formatsEaster.allWeeks}\n Промежуточных седмиц - ${this.formatsEaster.promWeeks} \n Текущая седмица - ${this.formatsEaster.currentWeek}\n Седмица по Пятьдесятнице - ${this.formatsEaster.currentWeek - 7}`
   }
 
+
+  // otstupkaVoz() {
+    
+// Функция должна вычислять размер отступки до наступления Воздвиженского Понедельника, которая корректирует ссылку на Апракос в том случае, если наступил понедельник 18 седмицы, а праздника Воздвижения еще не случилось.
+
+  // }
+  
   /**
    * Высчитывает количество седмиц до праздника Воздвижения.
    *
    * Возвращает количество дней - ступок.
+   * @returns number
    */
   // TODO: // 463-2021-333 !!! не сделано !!!
   vozdviggenieKresta(): string {
 
     let stupka = 0
-    let voz = ""
+    let vozDescription = ""
     let sliceLastEaster = this.formatsEaster.lastEaster as string
     let sliceLastEaster2 = sliceLastEaster.slice(0, 4)
 
+    // Определяем дату Воздвижения в МЛС.
     this.formatsEaster.vozdviggenie = new Date(sliceLastEaster2 + "/9/27")
     this.formatsEaster.vozdviggenieMLS = this.formatsEaster.
             vozdviggenie.getTime()
@@ -555,6 +571,8 @@ export class TimeboxService implements OnInit {
     a.setDate(updateTheDate);
     this.formatsEaster.mondayAfterVozdviggenie = a
 
+    // S:S спроектировать функцию  для вычисления отступки
+    
     // Деинит переменной, если еще не наступил Понедельник по Воздвижении.
     if (
 
@@ -567,44 +585,46 @@ export class TimeboxService implements OnInit {
     // В данной строке расчитывается количество седмиц от Недели Пятидесятницы до Недели Воздвижения Креста.
     // `- 6` в конце строки кода указывает на счет от Пятидесятницы.
     let kolichestvoSedmicPoPyatidesyatnice = (this.formatsEaster.vozdviggenieMLS - (this.formatsEaster.lastEasterMLS as number)) / this.CONST_MLS_DAY / 7 - 6
-    console.log(`Седмица на Воздвижение - ${Math.floor(kolichestvoSedmicPoPyatidesyatnice)}`)
-
+    
     // Если `stupka` равна нулю, то отступки или преступки нет.
     stupka = Math.floor(kolichestvoSedmicPoPyatidesyatnice) - 17
-
+    
     if (
-            // Условие наступления отступки
-            stupka > 0
-            && this.formatsEaster.mondayAfterVozdviggenie!
-    ) {
-            // это отступка (- единица, это коррекция для седмицы в
+      // Условие наступления отступки
+      stupka > 0
+      && this.formatsEaster.mondayAfterVozdviggenie! && this.formatsEaster.vozdviggenie
+      ) {
+        // это отступка (- единица, это коррекция для седмицы в
             // отличии от Недели)
 
             console.log(`Отступка составляет - ${stupka} седмицы.`)
 
             this.formatsEaster.vozStupka = stupka - 1
-            voz = `Воздвижение приходится на ${kolichestvoSedmicPoPyatidesyatnice} седмицу.
+            vozDescription = `Воздвижение приходится на ${kolichestvoSedmicPoPyatidesyatnice} седмицу.
             Отступка составляет - ${stupka} седмицы.`
 
     }
 
     else if (
             //Условие преступки
-            stupka < 0 && this.formatsEaster.mondayAfterVozdviggenie
+            stupka <= 0 && this.formatsEaster.mondayAfterVozdviggenie
     ) {
-
-
             this.formatsEaster.vozStupka = stupka
-            voz = `Воздвижение приходится на ${kolichestvoSedmicPoPyatidesyatnice} седмицу.
-            Преступка составляет -  ${stupka} седмицы.`
+            vozDescription = `Воздвижение приходится на ${kolichestvoSedmicPoPyatidesyatnice} седмицу.
+            Преступка составляет -  ${stupka} седмицы`
+
+    } else if (stupka <= 0 && this.formatsEaster.moment! >= this.formatsEaster.vozdviggenie) {
+          console.log(`Седмица на Воздвижение - ${Math.floor(kolichestvoSedmicPoPyatidesyatnice)}`)
 
     }
+      
     else {
-
-            voz = `Воздвижение приходится на седмицу - ${kolichestvoSedmicPoPyatidesyatnice}. Отступок нет.`
+      
+      vozDescription = `Воздвижение приходится на седмицу - ${kolichestvoSedmicPoPyatidesyatnice}. Отступок нет.`
+      // console.log(`Седмица на Воздвижение - ${vozDescription}`)
     }
 
-    return voz
+    return vozDescription
 }
 
   vhodGospoden(): string {
@@ -636,8 +656,8 @@ export class TimeboxService implements OnInit {
       ccc = this.formatsEaster.currentWeekStupka as number
       // TODO: // Требуется откорректировать ссылку с учётом отступки.
       this.formatsLinks.linkToAprakosPage = ccc + '/' + this.formatsEaster.dayNum + '.html'
-      this.formatsLinks.linkToElementID2 = `<a href="#seed${ccc}"  title="Сегодня : ${this.formatsEaster.dayName}">${ccc}</a>`
-      this.formatsLinks.linkToElementID4 = `<a href="#seed${ccc}"  title="Сегодня : ${this.formatsEaster.dayName}">${ccc - 7}</a>`
+      this.formatsLinks.linkToElementID2 = `<a href="#seed${ccc}"  title="Сегодня : ${this.formatsEaster.dayName}">${this.formatsEaster.promWeeks as number + ccc}</a>`
+      this.formatsLinks.linkToElementID4 = `<a href="#seed${ccc}"  title="Сегодня : ${this.formatsEaster.dayName}">${this.formatsEaster.promWeeks as number + ccc - 7}</a>`
 
 
     } else if (this.formatsEaster.currentWeek as number > 21 && this.formatsEaster.currentWeek as number < 27) {
@@ -767,7 +787,21 @@ export class TimeboxService implements OnInit {
 
   }
 
+  currentMonthRU(): string {
+
+    let arrayMothsRu = [
+      "Января","Февраля","Марта","Апреля","Мая","Июня","Июля","Августa","Сентября","Октября","Ноября","Декабря"
+    ]
+    
+    this.formatsEaster.currentMonth = arrayMothsRu[this.theMoment.getMonth()]
+
+    
+    return this.formatsEaster.currentMonth
+  }
+
 } // end class
+
+
 
 /**
  * Экземпляр по умолчанию с именем `apr`. Для получения дат другого Богослужебного года установите в скрипт свой экземпляр передав в параметре конструктора нужный вам год, например так:

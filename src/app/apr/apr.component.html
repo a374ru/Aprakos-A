@@ -1,7 +1,11 @@
 <section class="container">
-  <p class="h5 fontics" style="padding: 0px;  color: slategray;"> <span *ngIf="weekDay != 'Воскресенье'; else  elseBlock"
-      style="color: #e34234;"> {{ weekDay | titlecase }}</span><br> Седмица {{ currentWeek }}
-    <ng-template #elseBlock style="color: #858585;"><b> {{ weekDay }}</b></ng-template>
+  <p class="h5 fontics" style="padding: 0px;  color: slategray;">
+    <span *ngIf="weekDay == 'ВОСКРЕСЕНЬЕ'; else  elseBlock" style="color: #e34234;">
+      {{ weekDay }},
+      {{ date }}, {{ yearEaster }} года.<br> Седмица {{ currentWeek | titlecase }}
+    </span>
+
+    <ng-template #elseBlock><b>{{ weekDay }}</b>, {{ date }}, {{ yearEaster }} года.<br> Седмица {{ currentWeek | titlecase }} </ng-template>
   </p>
   <hr class="hr-1">
   <div class="row  h4">

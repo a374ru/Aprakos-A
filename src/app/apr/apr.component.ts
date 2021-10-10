@@ -58,22 +58,28 @@ export class AprComponent implements OnInit {
    * Номер зачала и стиха текущего Апракоса для Апостола
    */
   zapstl?: string;
-
+  stupka?: number;
   /**
    * Номер зачала и стиха текущего Апракоса для Евангелия. 
    */
   zevngl?: string;
 
+  yearEaster: string;
+  date: string;
+
   constructor(private timeBox: TimeboxService) {
-    try {
+  try {
+      
+    this.date = this.timeBox.theMoment.getUTCDate() + " " + this.timeBox.formatsEaster.currentMonth
+    this.yearEaster = this.timeBox.theMoment.getFullYear() + "" 
       // Получение aprakos.json с сервера.
       fetch(this.url).then(loadedJson => loadedJson.text()).then(loadedJsonText => this.currentZachalo(JSON.parse(loadedJsonText))).catch(() =>
         alert("Неудачная загрузка. Обновите страницу…")
       )
 
     } finally {
-      this.apstl = "Загрузка..."
-      // this.evngl = "Загрузка..."
+      // this.apstl = "Загрузка..."
+      this.evngl = "Загрузка..."
     }
 
   }
@@ -90,8 +96,12 @@ export class AprComponent implements OnInit {
    */
   currentZachalo(json: any) {
 
+    this.stupka = this.timeBox.formatsEaster.vozStupka as number
+    console.log(this.stupka)
+    
+
     for (const key in json) {
-      const curApr = "" + (this.timeBox.formatsEaster.currentWeek) + (this.timeBox.formatsEaster.dayNum)
+      const curApr = "" + (this.timeBox.formatsEaster.currentWeek as number - this.stupka) + (this.timeBox.formatsEaster.dayNum)
       if (json[key].aprakos == curApr) {
         this.zapstl = json[key].zapstl
         this.apstl = json[key].apstl
