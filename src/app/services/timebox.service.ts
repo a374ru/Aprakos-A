@@ -613,11 +613,8 @@ export class TimeboxService implements OnInit {
             vozDescription = `Воздвижение приходится на ${kolichestvoSedmicPoPyatidesyatnice} седмицу.
             Преступка составляет -  ${stupka} седмицы`
 
-    } else if (stupka <= 0 && this.formatsEaster.moment! >= this.formatsEaster.vozdviggenie) {
-          console.log(`Седмица на Воздвижение - ${Math.floor(kolichestvoSedmicPoPyatidesyatnice)}`)
-
     }
-      
+    
     else {
       
       vozDescription = `Воздвижение приходится на седмицу - ${kolichestvoSedmicPoPyatidesyatnice}. Отступок нет.`

@@ -5,7 +5,9 @@
       {{ date }}, {{ yearEaster }} года.<br> Седмица {{ currentWeek | titlecase }}
     </span>
 
-    <ng-template #elseBlock><b>{{ weekDay }}</b>, {{ date }}, {{ yearEaster }} года.<br> Седмица {{ currentWeek | titlecase }} </ng-template>
+    <ng-template #elseBlock><span style="color: blueviolet"><b>{{ weekDay | titlecase }},</b></span> {{ date }},
+      {{ yearEaster }} года.<br> Седмица
+      {{ currentWeek | titlecase }} </ng-template>
   </p>
   <hr class="hr-1">
   <div class="row  h4">

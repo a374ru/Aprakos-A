@@ -70,7 +70,7 @@ export class AprComponent implements OnInit {
   constructor(private timeBox: TimeboxService) {
   try {
       
-    this.date = this.timeBox.theMoment.getUTCDate() + " " + this.timeBox.formatsEaster.currentMonth
+    this.date = this.timeBox.theMoment.getDate() + " " + this.timeBox.formatsEaster.currentMonth
     this.yearEaster = this.timeBox.theMoment.getFullYear() + "" 
       // Получение aprakos.json с сервера.
       fetch(this.url).then(loadedJson => loadedJson.text()).then(loadedJsonText => this.currentZachalo(JSON.parse(loadedJsonText))).catch(() =>
