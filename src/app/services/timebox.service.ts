@@ -573,7 +573,7 @@ export class TimeboxService implements OnInit {
 
     // S:S спроектировать функцию  для вычисления отступки
     
-    // Деинит переменной, если еще не наступил Понедельник по Воздвижении.
+    // Деинит переменной Понедельника, если еще не наступил Понедельник по Воздвижении.
     if (
 
             this.theMoment.getTime() < this.formatsEaster.mondayAfterVozdviggenie.getTime()
@@ -590,7 +590,7 @@ export class TimeboxService implements OnInit {
     stupka = Math.floor(kolichestvoSedmicPoPyatidesyatnice) - 17
     
     if (
-      // Условие наступления отступки
+      // Услови продолжения отступки после седмицы КрестоВоздвиженния
       stupka > 0
       && this.formatsEaster.mondayAfterVozdviggenie! && this.formatsEaster.vozdviggenie
       ) {
@@ -614,6 +614,13 @@ export class TimeboxService implements OnInit {
             Преступка составляет -  ${stupka} седмицы`
 
     }
+
+    else if (
+      // Условие отступки при наступления 17 седмицы но еще не состоявшегося праздника КрестоВоздвиженния
+            stupka > 0 && this.formatsEaster.currentWeek! > 24 && this.formatsEaster.mondayAfterVozdviggenie == undefined &&  this.theMoment.getTime() < this.formatsEaster.vozdviggenie.getTime()
+    ) {
+      this.formatsEaster.vozStupka = stupka 
+      }
     
     else {
       
@@ -810,5 +817,3 @@ export class TimeboxService implements OnInit {
  */
 // 
 // let apr = new TimeBoxOrthodox()
-
-
