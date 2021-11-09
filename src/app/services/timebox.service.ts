@@ -310,7 +310,6 @@ export class TimeboxService implements OnInit {
   constructor() {
 
     this.theMoment = new Date()
-    this.date = this.theMoment.toISOString()
 
     try {
 
@@ -366,7 +365,7 @@ export class TimeboxService implements OnInit {
     let valYear: number = 0
     valYear = Number(userdate.slice(0, 4))
 
-    if (userdate.length > 3 && valYear >= 2016 && valYear < 2100) {
+    if (userdate.length > 3 && valYear >= 2016 && valYear <= 2100) {
       // возврат к значениям по умолчанию
       document.querySelectorAll('.colorBlock').forEach(n => n.classList.remove('colorBlock'))
       document.querySelectorAll('.seeddayON').forEach(n => n.classList.replace('seeddayON', 'seedday'))
@@ -574,7 +573,7 @@ export class TimeboxService implements OnInit {
 
     // S:S спроектировать функцию  для вычисления отступки
     
-    // Деинит переменной Понедельника, если еще не наступил Понедельник по Воздвижении.
+    // Деинит переменной, если еще не наступил Понедельник по Воздвижении.
     if (
 
             this.theMoment.getTime() < this.formatsEaster.mondayAfterVozdviggenie.getTime()
@@ -591,13 +590,15 @@ export class TimeboxService implements OnInit {
     stupka = Math.floor(kolichestvoSedmicPoPyatidesyatnice) - 17
     
     if (
-      // Услови продолжения отступки после седмицы КрестоВоздвиженния
+      // Условие наступления отступки
       stupka > 0
       && this.formatsEaster.mondayAfterVozdviggenie! && this.formatsEaster.vozdviggenie
       ) {
         // это отступка (- единица, это коррекция для седмицы в
             // отличии от Недели)
+
             console.log(`Отступка составляет - ${stupka} седмицы.`)
+
             this.formatsEaster.vozStupka = stupka - 1
             vozDescription = `Воздвижение приходится на ${kolichestvoSedmicPoPyatidesyatnice} седмицу.
             Отступка составляет - ${stupka} седмицы.`
@@ -613,7 +614,6 @@ export class TimeboxService implements OnInit {
             Преступка составляет -  ${stupka} седмицы`
 
     }
-
     else if (
       // Условие отступки при наступления 17 седмицы но еще не состоявшегося праздника КрестоВоздвиженния
             stupka > 0 && this.formatsEaster.currentWeek! > 24 && this.formatsEaster.mondayAfterVozdviggenie == undefined &&  this.theMoment.getTime() < this.formatsEaster.vozdviggenie.getTime()
@@ -817,3 +817,4 @@ export class TimeboxService implements OnInit {
  */
 // 
 // let apr = new TimeBoxOrthodox()
+
