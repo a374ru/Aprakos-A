@@ -310,6 +310,7 @@ export class TimeboxService implements OnInit {
   constructor() {
 
     this.theMoment = new Date()
+    this.date = this.theMoment.toISOString()
 
     try {
 
@@ -365,7 +366,7 @@ export class TimeboxService implements OnInit {
     let valYear: number = 0
     valYear = Number(userdate.slice(0, 4))
 
-    if (userdate.length > 3 && valYear >= 2016 && valYear <= 2100) {
+    if (userdate.length > 3 && valYear >= 2016 && valYear < 2100) {
       // возврат к значениям по умолчанию
       document.querySelectorAll('.colorBlock').forEach(n => n.classList.remove('colorBlock'))
       document.querySelectorAll('.seeddayON').forEach(n => n.classList.replace('seeddayON', 'seedday'))
@@ -554,7 +555,7 @@ export class TimeboxService implements OnInit {
   vozdviggenieKresta(): string {
 
     let stupka = 0
-    let vozDescription = ""
+    let vozDescription = "☦️"
     let sliceLastEaster = this.formatsEaster.lastEaster as string
     let sliceLastEaster2 = sliceLastEaster.slice(0, 4)
 
@@ -596,9 +597,7 @@ export class TimeboxService implements OnInit {
       ) {
         // это отступка (- единица, это коррекция для седмицы в
             // отличии от Недели)
-
             console.log(`Отступка составляет - ${stupka} седмицы.`)
-
             this.formatsEaster.vozStupka = stupka - 1
             vozDescription = `Воздвижение приходится на ${kolichestvoSedmicPoPyatidesyatnice} седмицу.
             Отступка составляет - ${stupka} седмицы.`
@@ -620,6 +619,7 @@ export class TimeboxService implements OnInit {
             stupka > 0 && this.formatsEaster.currentWeek! > 24 && this.formatsEaster.mondayAfterVozdviggenie == undefined &&  this.theMoment.getTime() < this.formatsEaster.vozdviggenie.getTime()
     ) {
       this.formatsEaster.vozStupka = stupka 
+
       }
     
     else {
