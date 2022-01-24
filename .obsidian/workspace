@@ -1,0 +1,92 @@
+{
+  "main": {
+    "id": "1724929cf7a4240d",
+    "type": "split",
+    "children": [
+      {
+        "id": "aeb8de276e8ba8be",
+        "type": "leaf",
+        "state": {
+          "type": "graph",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "30f59b7de2dcfbc7",
+    "type": "split",
+    "children": [
+      {
+        "id": "9ed97ba4ecf37ea3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4dfcc2a7b3313f81",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "aecb6cdc6e249b83",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "48790b7a54e008e5",
+    "type": "split",
+    "children": [
+      {
+        "id": "d95d95bb4b5d185e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5056c3eab92741a0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "aeb8de276e8ba8be",
+  "lastOpenFiles": [
+    "test.md",
+    "doc/setup.md",
+    "node_modules/caniuse-lite/README.md",
+    "README.md"
+  ]
+}
