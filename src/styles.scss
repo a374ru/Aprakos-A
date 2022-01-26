@@ -1,11 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 
-body{
+body {
   background-color: SeaShell;
-  color:#8F7161;
+  color: #8F7161;
 }
 
-.namePage p{
+.namePage p {
   color: #fafafa;
 }
 
@@ -36,13 +36,13 @@ body{
   // font-size: 3em;
   font-weight: 600;
   color: #ffc7c7;
-  font-family: Irmologion;
+  // font-family: Irmologion;
   padding: 32px 0px 0px 12px;
 
 }
 
-.hr-1{
-border-radius: 15%;
+.hr-1 {
+  border-radius: 15%;
   height: 20px;
   width: 104%;
   margin-left: -10px;
@@ -52,11 +52,11 @@ border-radius: 15%;
   border-style: outset;
 }
 
-.pppp{
-padding-left: 2%;
-padding-top: 2.7%;
-padding-right: 1%;
-padding-bottom: 1%;
+.pppp {
+  padding-left: 2%;
+  padding-top: 2.7%;
+  padding-right: 1%;
+  padding-bottom: 1%;
 }
 
 /* You can add global styles to this file, and also import other style files */
@@ -79,7 +79,7 @@ $red: #e34234;
 
 .test {
   // class for tested items
-  margin: 1em 0em 1em 0em ;
+  margin: 1em 0em 1em 0em;
   background-color: #f4f4f4;
   box-shadow: 0px 0px 7px 0px #ff00008a;
   border-color: #867b7a;
@@ -101,12 +101,12 @@ $red: #e34234;
 }
 
 /* Importing Bootstrap SCSS file. */
-.page404{
+.page404 {
   font-family: Fontics;
   font-size: 3.3rem;
 }
 
-.fontics{
+.fontics {
   font-family: Fontics;
   font-size: 130%;
 }
@@ -123,7 +123,6 @@ $ystm-fs-07: 0.7em;
 
 }
 
-a:link{
-color: khaki;
+a:link {
+  color: khaki;
 }
-

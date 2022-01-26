@@ -1,27 +1,36 @@
 <section class="container">
-  <p id="zachala" class="h5 fontics" style="padding: 0px;  color: slategray;">
-    <span *ngIf="weekDay == 'ВОСКРЕСЕНЬЕ'; else  elseBlock" style="color: #e34234;">
-      {{ weekDay }},
-      {{ date }}, {{ yearEaster }} года.<br> Седмица {{ currentWeek | titlecase }}
+  <p id="zachala" class="h5 fontics" style="padding: 0px; color: slategray">
+    <span
+      *ngIf="weekDay == 'ВОСКРЕСЕНЬЕ'; else elseBlock"
+      style="color: #e34234"
+    >
+      {{ weekDay }}, {{ date }}, {{ yearEaster }} года.<br />
+      Седмица {{ currentWeek | titlecase }}
     </span>
 
-    <ng-template #elseBlock><span style="color: blueviolet"><b>{{ weekDay | titlecase }},</b></span> {{ date }},
-      {{ yearEaster }} года.<br> Седмица
-      {{ currentWeek }} </ng-template>
+    <ng-template #elseBlock
+      ><span style="color: blueviolet"
+        ><b>{{ weekDay | titlecase }},</b></span
+      >
+      {{ date }}, {{ yearEaster }} года.<br />
+      Седмица {{ currentWeek }}
+    </ng-template>
   </p>
-  <hr class="hr-1">
-  <div class="row  h4">
+  <hr class="hr-1" />
+  <div class="row h4">
     <div class="col-md csl" id="apstl">
       <p id="zapstl" class="fontics">
-        <span class="black">Апостолъ: </span><br>{{zapstl}}
+        <span class="black">Апостолъ: </span><br />{{ zapstl }}
       </p>
-      <span class="red">{{ buckvicaApstl }}</span>{{apstl}}
+      <span class="red">{{ buckvicaApstl }}</span
+      >{{ apstl }}
     </div>
     <div class="col csl" id="evngl">
       <p id="zevngl" class="fontics">
-        <span class="black">Евангелие: </span><br>{{zevngl}}
+        <span class="black">Евангелие: </span><br />{{ zevngl }}
       </p>
-      <span class="red">{{ buckvicaEvngl }}</span>{{evngl}}
+      <span class="red">{{ buckvicaEvngl }}</span
+      >{{ evngl }}
     </div>
   </div>
 </section>
