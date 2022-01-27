@@ -11,7 +11,7 @@ export class AprComponent implements OnInit {
    * Апракос в формате JSON.
    * Данный json не входит в состав программы, составляется и корретируется в другом проекте. Данный JSON файл является оригинальным поддерживаемым документом.
    */
-  url = 'https://cdn.jsdelivr.net/gh/a374ru/aprakos-json@master/aprakos.json';
+  url = 'https://cdn.jsdelivr.net/gh/a374ru/aprakos-json/aprakos.json';
 
   /**
    * Название текущего дня
