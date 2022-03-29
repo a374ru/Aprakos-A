@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col" id="ystm-strapi">
+      <h1>---{{ strapi_content }}</h1>
+    </div>
+    <div class="row">
+      <div *ngFor="let item of content">
+        <div class="col h2" *ngIf="item == 'Марк'">{{ item }}</div>
+      </div>
+    </div>
+  </div>
+</div>

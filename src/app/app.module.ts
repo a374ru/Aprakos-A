@@ -8,6 +8,10 @@ import { YstmEntranceComponent } from './ystm-entrance/ystm-entrance.component';
 import { AprComponent } from './apr/apr.component';
 import { EasterComponent } from './easter/easter.component';
 import { Page404Component } from './page404/page404.component';
+import { StrapiComponent } from './strapi/strapi.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,12 +19,15 @@ import { Page404Component } from './page404/page404.component';
     AprComponent,
     EasterComponent,
     Page404Component,
+    StrapiComponent,
   ],
   // schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

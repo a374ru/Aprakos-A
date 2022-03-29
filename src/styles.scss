@@ -6,7 +6,7 @@ body {
 }
 
 .namePage p {
-  color: #fafafa;
+  color: #efefef;
 }
 
 
@@ -125,4 +125,14 @@ $ystm-fs-07: 0.7em;
 
 a:link {
   color: khaki;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
